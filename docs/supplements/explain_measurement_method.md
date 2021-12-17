@@ -114,9 +114,11 @@ callback_startとrclcpp_publishの紐づけは、rclcpp_publishから見て一�
 
 ### 入出力のヘッダータイムスタンプのマッチング
 入出力のヘッダーでマッチングを取り、入力トピックと出力トピックの時刻の差分からノードレイテンシを算出します。
+以下はこのレイテンシ算出方法を表した図です。
 
+<div align="center"><img src="https://user-images.githubusercontent.com/55824710/146482653-376d72d8-d63c-45a7-b67e-86dc9bb6be8b.png" width="600px">
 
-
+ 
 **想定**
 
  - 入出力のタイムスタンプの値でマッチングが取れること（値を書き換えずに、そのまま publish していること）
