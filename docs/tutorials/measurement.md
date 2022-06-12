@@ -171,4 +171,37 @@ You can avoid this error with the following two approach.
 
 - to filter topics and nodes which can be ignored with trace filtering explained in the previous section
   - especially, filtering highly-frequent nodes and topics is effective
+  - The following two commands allow the number of trace points for each node and each topic to be displayed in table form
+      ```bash
+      # Display the number of trace points for each node
+      $ ros2 caret node_summary -d ~/ros2_ws/evaluate/e2e_sample/
+
+      ---Output text as below---
+
+      node_name            |   number_of_trace_points
+      ---------------------+--------------------------
+      /message_driven_node |                      600
+      /timer_driven_node   |                      535
+      /drive_node          |                      373
+      /filter_node         |                      371
+      /sensor_dummy_node   |                      371
+      /actuator_dummy_node |                      200
+      unkown               |                       16
+      
+
+      # Display the number of trace points for each topic
+      $ ros2 caret topic_summary -d ~/ros2_ws/evaluate/e2e_sample/
+
+      ---Output text as below---
+
+      topic_name        |   number_of_trace_points
+      ------------------+--------------------------
+      unkown            |                      691
+      /topic3           |                      391
+      /drive            |                      343
+      /topic1           |                      343
+      /topic2           |                      341
+      /topic4           |                      339
+      /rosout           |                        6
+      ```
 - to increase size of ring buffer defined in [`lttng_impl.py`](https://github.com/tier4/ros2_tracing/blob/2cd9d104664b4bf4d7507d01e5553129eefe1c9a/tracetools_trace/tracetools_trace/tools/lttng_impl.py#L109F)
