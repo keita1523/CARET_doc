@@ -91,7 +91,7 @@ lttng = Lttng('./e2e_sample')
 app = Application(arch, lttng)
 ```
 
-Please see [CARET analyze API document](https://tier4.github.io/CARET_analyze/latest/plot/) for details on the arguments of API.
+Please see [CARET analyze API document](https://tier4.github.io/CARET_analyze/latest/plot/) for details on the arguments of this API.
 
 ### Execution frequency
 ```python
