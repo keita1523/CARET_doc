@@ -80,9 +80,9 @@ show(p)
 
 ## API to get information for each callback
 
-CARET can visualize the execution frequency, jitter, and latency per unit time for each callback and obtain them in pandas dataframe format.
+CARET can visualize the execution frequency, jitter, and latency per unit time for each callback and obtain them as the pandas DataFrame format.
 Examples in a sample program are shown in subsequent sections.
-In the example below, the following commands are executed in advance.
+In each example, the following commands are executed in advance.
 ```python
 from caret_analyze import Architecture, Application, Lttng
 
@@ -91,7 +91,7 @@ lttng = Lttng('./e2e_sample')
 app = Application(arch, lttng)
 ```
 
-Please see [CARET_analyze API document](https://tier4.github.io/CARET_analyze/latest/plot/) for details on the arguments of this API.
+Please see [CARET analyze API document](https://tier4.github.io/CARET_analyze/latest/plot/) for details on the arguments of API.
 
 ### Execution frequency
 ```python
