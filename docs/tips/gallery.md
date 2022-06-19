@@ -77,3 +77,19 @@ show(p)
 ```
 
 ![history_sample](../imgs/history_sample.png)
+
+## Callback Scheduling Visualization
+Callback Scheduling Visualization can visualize the specific scheduling details of callbacks which in target.Target could be a Node, a Exeutor or, a Callbackgroup.
+```python
+# traget: node 
+node = app.get_node('node_name') # get node object
+callback_sched(node)
+# traget: executor 
+executor = app.get_executor('executor_name') # get executor object
+callback_sched(executor)
+# traget: executor 
+cbg = app.get_callback_group('cbg_name') # get callback group object
+callback_sched(cbg)
+```
+![Callback_Scheduling_Visualization_sample](../imgs/callback_sched_sample.png)
+The short rectangular indicates the callback execution time. When the mouse cursor hovers over the long rectangular, a tooltip containing information about the callback will be displayed. The arrow location is the timer callback event start time. When the execution of the timer callback is delayed, a red arrow is displayed; for normal execution, it is marked with a white arrow. If the difference between the time the timer event fires and the time the timer callback starts executing exceeds 5 ms, the callback execution is considered to be delayed. 
